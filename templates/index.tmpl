@@ -9,7 +9,22 @@
 </head>
 <body>
 <h1>
-    Visitors: {{ .visitors }}
+    Visitors: <span id="visit">{{ .visitors }}</span>
 </h1>
+<script>
+    url = 'ws://localhost:8080/ws';
+    c = new WebSocket(url);
+
+
+    c.onmessage = function(msg){
+        document.getElementById("visit").innerText = msg.data
+        console.log(msg)
+    }
+
+    c.onopen = function(){
+        // document.getElementById("visit").innerText = "SEND DATA"
+        c.send("HELLO FROM FRONT")
+    }
+</script>
 </body>
 </html>

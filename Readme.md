@@ -2,7 +2,7 @@ ChessBuddy
 ==========
 
 Service that counts users which opened current page of website
-
+WebSocket Support. If you open page in different tabs you can see asynchronous page update. 
 
 Quick Start
 -----------
@@ -20,6 +20,7 @@ You can use `docker-compose dovn -v` to clear visiting history.
 Start application without docker:
     
     make
+    
 After build run application:
 
     ./server
@@ -31,4 +32,3 @@ Missing / Planned Features
 * testing
 * configuration from env variables
 * session support for distinguish between users
-* WebSocket support for realtime visitors update
